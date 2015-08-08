@@ -45,20 +45,31 @@
  </div>
 
  <div class="button-bar">
-     <a class="button" style="background:white; color:black" id="1">Red</a>
-     <a class="button" style="background:white; color:black" id="2">Green</a>
-     <a class="button" style="background:white; color:black" id="3">Blue</a>
+     <a class="button" style="background:white; color:black" id="k1_on">1_on</a>
+     <a class="button" style="background:white; color:black" id="k1_off">1_off</a>
+     <a class="button" style="background:white; color:black" id="k2_on">2_on</a>
+     <a class="button" style="background:white; color:black" id="k2_off">2_off</a>
  </div>
  
  <div class="button-bar">
-     <a class="button" style="background:white; color:black" id="4">Red</a>
-     <a class="button" style="background:white; color:black" id="5">Green</a>
-     <a class="button" style="background:white; color:black" id="6">Blue</a>
+     <a class="button" style="background:white; color:black" id="k3_on">3_on</a>
+     <a class="button" style="background:white; color:black" id="k3_off">3_off</a>
+     <a class="button" style="background:white; color:black" id="k4_on">4_on</a>
+     <a class="button" style="background:white; color:black" id="k4_off">4_off</a>
  </div>
  
  <div class="button-bar">
-     <a class="button" style="background:white; color:black" id="7">On</a>
-     <a class="button" style="background:white; color:black" id="8">Off</a>
+     <a class="button" style="background:white; color:black" id="k5_on">5_on</a>
+     <a class="button" style="background:white; color:black" id="k5_off">5_off</a>
+     <a class="button" style="background:white; color:black" id="k6_on">6_on</a>
+     <a class="button" style="background:white; color:black" id="k6_off">6_off</a>
+ </div>
+ 
+ <div class="button-bar">
+     <a class="button" style="background:white; color:black" id="k7_on">7_on</a>
+     <a class="button" style="background:white; color:black" id="k7_off">7_off</a>
+     <a class="button" style="background:white; color:black" id="k8_on">8_on</a>
+     <a class="button" style="background:white; color:black" id="k8_off">8_off</a>
  </div>
 </div>
 
@@ -150,45 +161,134 @@
         // document.querySelector('#send2uart').addEventListener('touchstart', send2uart);
         document.querySelector('#send2uart').addEventListener('click', send2uart);
 
-        function led_on() {
+        function k1_on() {
             var topic = device_id+'/in/write';
-            var commond = '{"rgbled_switch":true}';
+            var commond = '{"k1":true}';
             client.publish(topic, commond);
         }
         // document.querySelector('#led_on').addEventListener('touchstart', led_on);
-        document.querySelector('#led_on').addEventListener('click', led_on);
+        document.querySelector('#k1').addEventListener('click', k1);
 
-        function led_off() {
+        function k1_off() {
             var topic = device_id+'/in/write';
-            var commond = '{"rgbled_switch":false}';
+            var commond = '{"k1":false}';
             client.publish(topic, commond);
         }
         // document.querySelector('#led_off').addEventListener('touchstart', led_off);
-        document.querySelector('#led_off').addEventListener('click', led_off);
+        document.querySelector('#k1').addEventListener('click', k1);
 
-        function led_red() {
+        function k2_on() {
             var topic = device_id+'/in/write';
-            var commond = '{"rgbled_switch":true,"rgbled_hues":0, "rgbled_saturation":100, "rgbled_brightness":100}'; 
+            var commond = '{"k2":true}';
             client.publish(topic, commond);
         }
-        // document.querySelector('#led_red').addEventListener('touchstart', led_red);
-        document.querySelector('#led_red').addEventListener('click', led_red);
+        // document.querySelector('#led_on').addEventListener('touchstart', led_on);
+        document.querySelector('#k2').addEventListener('click', k2);
 
-        function led_green() {
+        function k2_off() {
             var topic = device_id+'/in/write';
-            var commond = '{"rgbled_switch":true,"rgbled_hues":120, "rgbled_saturation":100, "rgbled_brightness":100}'; 
+            var commond = '{"k2":false}';
             client.publish(topic, commond);
         }
-        // document.querySelector('#led_green').addEventListener('touchstart', led_green);
-        document.querySelector('#led_green').addEventListener('click', led_green);
-
-        function led_blue() {
+        // document.querySelector('#led_off').addEventListener('touchstart', led_off);
+        document.querySelector('#k2').addEventListener('click', k2);
+        
+        function k3_on() {
             var topic = device_id+'/in/write';
-            var commond = '{"rgbled_switch":true,"rgbled_hues":240, "rgbled_saturation":100, "rgbled_brightness":100}'; 
+            var commond = '{"k3":true}';
             client.publish(topic, commond);
         }
-        // document.querySelector('#led_blue').addEventListener('touchstart', led_blue);
-        document.querySelector('#led_blue').addEventListener('click', led_blue);
+        // document.querySelector('#led_on').addEventListener('touchstart', led_on);
+        document.querySelector('#k3').addEventListener('click', k3);
+
+        function k3_off() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k3":false}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_off').addEventListener('touchstart', led_off);
+        document.querySelector('#k3').addEventListener('click', k3);
+        
+        function k4_on() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k4":true}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_on').addEventListener('touchstart', led_on);
+        document.querySelector('#k4').addEventListener('click', k4);
+
+        function k4_off() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k4":false}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_off').addEventListener('touchstart', led_off);
+        document.querySelector('#k4').addEventListener('click', k4);
+        
+        function k5_on() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k5":true}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_on').addEventListener('touchstart', led_on);
+        document.querySelector('#k5').addEventListener('click', k5);
+
+        function k5_off() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k5":false}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_off').addEventListener('touchstart', led_off);
+        document.querySelector('#k5').addEventListener('click', k5);
+        
+        function k6_on() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k6":true}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_on').addEventListener('touchstart', led_on);
+        document.querySelector('#k6').addEventListener('click', k6);
+
+        function k6_off() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k6":false}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_off').addEventListener('touchstart', led_off);
+        document.querySelector('#k6').addEventListener('click', k6);
+        
+        function k7_on() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k7":true}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_on').addEventListener('touchstart', led_on);
+        document.querySelector('#k7').addEventListener('click', k7);
+
+        function k7_off() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k7":false}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_off').addEventListener('touchstart', led_off);
+        document.querySelector('#k7').addEventListener('click', k7);
+        
+        function k8_on() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k8":true}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_on').addEventListener('touchstart', led_on);
+        document.querySelector('#k8').addEventListener('click', k8);
+
+        function k8_off() {
+            var topic = device_id+'/in/write';
+            var commond = '{"k8":false}';
+            client.publish(topic, commond);
+        }
+        // document.querySelector('#led_off').addEventListener('touchstart', led_off);
+        document.querySelector('#k8').addEventListener('click', k8);
+        
     }
 
     // 日志打印在页面的部分    
