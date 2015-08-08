@@ -165,7 +165,7 @@
             var topic = device_id+'/in/write';
             var commond = '{"k1":true}';
             client.publish(topic, commond);
-            console.log("现在执行-->:"+commond);
+            document.querySelector('#k1').addEventListener('click', k1);
         }
         // document.querySelector('#led_on').addEventListener('touchstart', led_on);
         document.querySelector('#k1').addEventListener('click', k1);
@@ -174,7 +174,6 @@
             var topic = device_id+'/in/write';
             var commond = '{"k1":false}';
             client.publish(topic, commond);
-            console.log("现在执行-->:"+commond);
         }
         // document.querySelector('#led_off').addEventListener('touchstart', led_off);
         document.querySelector('#k1').addEventListener('click', k1);
